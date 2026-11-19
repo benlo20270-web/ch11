@@ -1,79 +1,70 @@
 public class Fraction {
-// instance variables (attributes, fields)
-	 int numerator, denominator;
+    // instance variable (atrributes, fields)
 
+    int numerator, denominator;
 
-// constructors
+    // constructors
+    public Fraction() { // default constructor (no parameter)
+        setNum(1);
+        setDenom(1);
+    }
 
-	public Fraction () {  // default constructure
-		numerator = 1;
-		denominator = 1;
-	
-	
-}
+    public Fraction(int n, int d) { // parameterized constructor
+        setNum(n);
+        setDenom(d);
+    }
+    public Fraction(String a){
+		setNum(Integer.parseInt( a.substring(0,a.indexOf('/'))));
+		setDenom(Integer.parseInt(a.substring(a.indexOf('/')+1)));
+	}
+	public Fraction(Fraction f){
+		setNum(f.numerator);
+		setDenom(f.denominator);
+	}
 
-	 public Fraction (int n, int d) { //parameterized constructor
-		 numerator = n;
-		 denominator = d;
-}
-// behaviour methods (accessor, mutator, helper)
+    // behaviour methods (accessor, mutator, helper)
+    public int getNum() { // accessor method, aka getters
+        return numerator;
+    }
 
-public Fraction(String s){
-	numerator = Integer.parseInt(s.substring(0,s.indexOf('/')));
-	denominator = Integer.parseInt(s.substring(s.indexOf('/')+1));
-	
-	
-}
-
-public Fraction (Fraction f) {
-	numerator = f.numerator;
-	denominator = f.denominator;
-	
-	
-	
-}
-
-
-
-public int getNum() {
-	return numerator;
-}
-
-public int getDenom() {
-	return denominator;
-}
-
-public string toString() {
-	return numerator + "/" + denominator;
-}
-	//mutator methods
-	public void setNum(int n) {
+    public int getDenom() { // accessor method
+        return denominator;
+    }
+    //public String Fraction.add(String a, String b){
+    public String toString(){
+		return numerator + "/" + denominator;
+	}
+		
+	public void setNum( int n ){
 		numerator = n;
 	}
-
-	public void setDenom(int d) {
-		if(d!=0) {
-			denomintator = d;
-	}else{
-		denominator = 1;
-		System.out.print("Error");
+	
+	public void setDenom( int d ){
+		if(d!=0){
+			denominator = d;
+		}else{
+			denominator = 1;
+			System.out.println("Error");
+		}
 	}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	
+	public static Fraction mult(Fraction.a, Fraction.b) {
+		int finalDen = a.getDenom() * b.getDenom();
+		int finalNum = a.getNum() * b.getDenom();
+		
+		Fraction answer = new Fraction (finalNum , finalDen);
+		return answer;
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 }
