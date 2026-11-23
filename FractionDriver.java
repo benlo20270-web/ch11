@@ -14,13 +14,13 @@ public static void main (String[] args) {
 	System.out.println(f4.getNum() + "/" + f4.getDenom());
 	
 	
-}
+
 
 	Fraction half = new Fraction(1,2);
 	Fraction third = new Fraction (1,3);
-	Fraction sum = Fraction.add(half, third); 
+	// Fraction sum = Fraction.add(half, third); 
 	
-	Fraction f5 = new Fraction.mult(half,third);
+	Fraction f5 = Fraction.mult(half,third);
 	System.out.println(f5);
-
+}
 }

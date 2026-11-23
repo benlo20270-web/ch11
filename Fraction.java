@@ -48,9 +48,9 @@ public class Fraction {
 		}
 	}
 	
-	public static Fraction mult(Fraction.a, Fraction.b) {
-		int finalDen = a.getDenom() * b.getDenom();
-		int finalNum = a.getNum() * b.getDenom();
+	public static Fraction mult(Fraction a, Fraction b) {
+		int finalDen = a.denominator * b.denominator;
+		int finalNum = a.numerator* b.numerator;
 		
 		Fraction answer = new Fraction (finalNum , finalDen);
 		return answer;
@@ -60,11 +60,36 @@ public class Fraction {
 		
 	}
 	
+	public void reduce() {
+	int GCM = 0;
+	int a = getNum();
+	int b = getDenom();
+	while(a!=b) {
+	if (a>b) {
+		b=a-b;
+	}else{
+		a=a-b;
+}}
+	GCM = a;
+	setDenom(denominator/GCM);
+	setNum(numerator/GCM);
 	
-	
-	
-	
-	
-	
-	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
