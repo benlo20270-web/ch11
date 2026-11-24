@@ -48,25 +48,15 @@ public class Fraction {
 		}
 	}
 	
-	public static Fraction mult(Fraction a, Fraction b) {
-		int finalDen = a.denominator * b.denominator;
-		int finalNum = a.numerator* b.numerator;
-		
-		Fraction answer = new Fraction (finalNum , finalDen);
-		return answer;
-		
-		
-		
-		
-	}
+	
 	
 	public void reduce() {
 	int GCM = 0;
 	int a = getNum();
 	int b = getDenom();
 	while(a!=b) {
-	if (a>b) {
-		b=a-b;
+	if (a<b) {
+		b=b-a;
 	}else{
 		a=a-b;
 }}
@@ -79,14 +69,52 @@ public class Fraction {
 
 
 
+public static Fraction add(Fraction a, Fraction b) {
+		int finalD = a.denominator * b.denominator;
+		int finalN = a.numerator * (finalD / a.denominator) + b.numerator * (finalD / b.denominator);		
+	
+		Fraction answer = new Fraction (finalN , finalD);
+		answer.reduce();
+		return answer;
 
+}
 
+public static Fraction subtract(Fraction a, Fraction b) {
+		int finalD = a.denominator * b.denominator;
+		int finalN = a.numerator * (finalD / a.denominator) - b.numerator * (finalD / b.denominator);		
+	
+		Fraction answer = new Fraction (finalN , finalD);
+		answer.reduce();
+		return answer;
 
+}
 
+public static Fraction mult(Fraction a, Fraction b) {
+		int finalDen = a.denominator * b.denominator;
+		int finalNum = a.numerator* b.numerator;
+		
+		Fraction answer = new Fraction (finalNum , finalDen);
+		return answer;
+		}
+		
 
+public static Fraction divide(Fraction a, Fraction b) {
+		int finalDen = a.denominator * b.numerator;
+		int finalNum = a.numerator* b.denominator;
+		
+		Fraction answer = new Fraction (finalNum , finalDen);
+		return answer;
+	}
 
-
-
+public boolean equal(Fraction f) {
+	int a = getDenom();
+	int b = getNum();
+	if(a==f.denominator && b==f.numerator) {
+		return true;
+	}else{
+		return false;
+	}
+}
 
 
 
