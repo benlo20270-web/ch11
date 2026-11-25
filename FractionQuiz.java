@@ -7,31 +7,25 @@ public static void main (String[] args) {
 	
 	
 	
-	
-	
-	
-	
-	
-	
 	Fraction f1 = new Fraction();
-	Fraction f2 = new Fraction(1,2);	
-	System.out.println(f1);
-	System.out.println(f1.getNum() + "/" + f1.getDenom());
-	System.out.println(f2.getNum() + "/" + f2.getDenom());
-	Fraction f3=new Fraction("1/2");
-	Fraction f4=new Fraction("1/3");
-	Fraction anotherHalf=new Fraction(f3);
-	System.out.println(f3.getNum() + "/" + f3.getDenom());
-	System.out.println(f4.getNum() + "/" + f4.getDenom());
+	Fraction f2 = new Fraction();
+	
+	char operation = Fraction.oper();
+	
+	if (operation == '+') {
+		Fraction answer = Fraction.add(f1, f2);
+	}
+	if (operation == '-') {
+		Fraction answer = Fraction.subtract(f1, f2);
+	}
+	if (operation == '*') {
+		Fraction answer = Fraction.mult(f1, f2);
+	}
+	if (operation == '/') {
+		Fraction answer = Fraction.divide(f1, f2);
+	}
 	
 	
-
-
-	Fraction half = new Fraction(1,2);
-	Fraction third = new Fraction (1,3);
-	// Fraction sum = Fraction.add(half, third); 
 	
-	Fraction f5 = Fraction.mult(half,third);
-	System.out.println(f5);
 }
 }
