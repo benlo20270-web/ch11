@@ -89,6 +89,7 @@ public class Fraction {
         int finalNum = a.numerator * b.numerator;
 
         Fraction answer = new Fraction(finalNum, finalDen);
+        answer.reduce();
         return answer;
     }
 
@@ -97,6 +98,7 @@ public class Fraction {
         int finalNum = a.numerator * b.denominator;
 
         Fraction answer = new Fraction(finalNum, finalDen);
+        answer.reduce();
         return answer;
     }
 
@@ -110,9 +112,16 @@ public class Fraction {
         }
     }
 
+   
     public static char oper() {
         String op = "+-*/";
         int ind = ((int) (Math.random() * 4));
         return (op.charAt(ind));
     }
+    
+    
+
+    
+    
+    
 }
